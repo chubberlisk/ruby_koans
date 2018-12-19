@@ -103,7 +103,8 @@ class AboutHashes < Neo::Koan
     hash[:two] << "dos"
     ## :two key doesn't exist, so get ['uno'] as default was updated
     ## << equals to ['uno'].push('dos')
-    ## i.e. pushes 'dos' to the default (which is an array) 
+    ## i.e. pushes 'dos' to the default (which is an array)
+    ## https://stackoverflow.com/questions/35833583/why-does-the-test-default-value-is-the-same-object-in-about-hashes-rb-of-ruby-ko
 
     assert_equal ['uno', 'dos'], hash[:one]
     assert_equal ['uno', 'dos'], hash[:two]
