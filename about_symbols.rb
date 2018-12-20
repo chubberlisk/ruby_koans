@@ -97,7 +97,8 @@ class AboutSymbols < Neo::Koan
   # THINK ABOUT IT:
   #
   # Why is it not a good idea to dynamically create a lot of symbols?
-  ## takes up a lot of memory that can only be freed when the program ends
-  ## symbols are like strings but they are immutable (cannot be modified)
-  ## https://stackoverflow.com/questions/4573991/why-is-it-not-a-good-idea-to-dynamically-create-a-lot-of-symbols-in-ruby
+
+  # It takes up a lot of memory that can only be freed when the program ends
+  # because symbols are like strings but they are immutable (cannot be modified).
+  # https://stackoverflow.com/questions/4573991/why-is-it-not-a-good-idea-to-dynamically-create-a-lot-of-symbols-in-ruby
 end

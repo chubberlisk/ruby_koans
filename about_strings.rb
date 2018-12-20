@@ -102,8 +102,9 @@ EOS
     #
     # Ruby programmers tend to favor the shovel operator (<<) over the
     # plus equals operator (+=) when building up strings.  Why?
-    ## << is faster than += as it does not create a new object
-    ## https://stackoverflow.com/questions/4684446/why-is-the-shovel-operator-preferred-over-plus-equals-when-building-a
+
+    # << is faster than += as it does not create a new object.
+    # https://stackoverflow.com/questions/4684446/why-is-the-shovel-operator-preferred-over-plus-equals-when-building-a
   end
 
   def test_double_quoted_string_interpret_escape_characters

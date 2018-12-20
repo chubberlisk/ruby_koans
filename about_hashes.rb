@@ -30,8 +30,9 @@ class AboutHashes < Neo::Koan
     # THINK ABOUT IT:
     #
     # Why might you want to use #fetch instead of #[] when accessing hash keys?
-    ## #[] returns nil
-    ## whereas fetch returns a KeyError
+
+    # #[] returns nil whereas fetch returns a KeyError, which is a
+    # more useful and informative error.
   end
 
   def test_changing_hashes
@@ -43,6 +44,10 @@ class AboutHashes < Neo::Koan
 
     # Bonus Question: Why was "expected" broken out into a variable
     # rather than used as a literal?
+
+    # Because Ruby interprets { ... } as a block.
+    # So, assert_equal { :one => "eins", :two => "dos" }, hash
+    # would not have worked.
   end
 
   def test_hash_is_unordered
@@ -93,18 +98,18 @@ class AboutHashes < Neo::Koan
   end
 
   def test_default_value_is_the_same_object
-    ## instantiate a new array with [] and set it as default
+    # Instantiate a new array with [] and set it as default.
     hash = Hash.new([])
   
     hash[:one] << "uno"
-    ## :one key doesn't exist, so get []
-    ## << equals to [].push('uno')
-    ## i.e. pushes 'uno' to the default (which is an array)
+    # The :one key does not exist, so returned is [].
+    # << equals to [].push('uno')
+    # i.e. pushes 'uno' to the default (which is an array).
     hash[:two] << "dos"
-    ## :two key doesn't exist, so get ['uno'] as default was updated
-    ## << equals to ['uno'].push('dos')
-    ## i.e. pushes 'dos' to the default (which is an array)
-    ## https://stackoverflow.com/questions/35833583/why-does-the-test-default-value-is-the-same-object-in-about-hashes-rb-of-ruby-ko
+    # The :two key does not exist, so returned is ['uno'] as default was updated.
+    # << equals to ['uno'].push('dos')
+    # i.e. pushes 'dos' to the default (which is an array).
+    # https://stackoverflow.com/questions/35833583/why-does-the-test-default-value-is-the-same-object-in-about-hashes-rb-of-ruby-ko
 
     assert_equal ['uno', 'dos'], hash[:one]
     assert_equal ['uno', 'dos'], hash[:two]

@@ -33,6 +33,8 @@ class AboutNil < Neo::Koan
     # or
     #    obj == nil
     # Why?
-  end
 
+    # Better convention as everything in Ruby is an object so
+    # it's better to call the instance method.
+  end
 end

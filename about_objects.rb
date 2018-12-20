@@ -38,8 +38,9 @@ class AboutObjects < Neo::Koan
 
     # THINK ABOUT IT:
     # What pattern do the object IDs for small integers follow?
-    ## i*2+1
-    ## http://thepaulrayner.com/blog/2013/02/06/object-ids-in-ruby/
+
+    # i * 2 + 1 e.g. if i = 2, then 2 * 2 + 1 = 5
+    # http://thepaulrayner.com/blog/2013/02/06/object-ids-in-ruby/
   end
 
   def test_clone_creates_a_different_object

@@ -43,13 +43,15 @@ class AboutArrays < Neo::Koan
     assert_equal [], array[4,100]
     assert_equal nil, array[5,0]
 
-    ## slicing takes a pair of arguments e.g. array[start, length]
-    ## treat start NOT as an index, but PLACES BETWEEN ELEMENTS
-    ## i.e.
-    ##   :peanut   :butter   :and   :jelly
-    ## 0         1         2      3        4
-    ## therefore, 4 is still within the array from a slicing perspective
-    ## http://thepaulrayner.com/blog/2013/02/07/array-slicing-in-ruby/
+    # Slicing takes a pair of arguments e.g. array[start, length] so
+    # treat start NOT as an index, but PLACES BETWEEN ELEMENTS.
+    #
+    # i.e.
+    #   :peanut   :butter   :and   :jelly
+    # 0         1         2      3        4
+    #
+    # Therefore, 4 is still within the array from a slicing perspective.
+    # http://thepaulrayner.com/blog/2013/02/07/array-slicing-in-ruby/
   end
 
   def test_arrays_and_ranges
@@ -88,5 +90,4 @@ class AboutArrays < Neo::Koan
     assert_equal :first, shifted_value
     assert_equal [1,2], array
   end
-
 end
